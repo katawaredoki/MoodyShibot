@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Sockets;
 using System.Net;
 using System.Collections.Generic;
@@ -187,11 +187,11 @@ namespace EleunameBotConsole.Features
                         File.AppendAllText("/var/www/apis.eleuna.me/bot/songrequests.txt", $"{e.Command.ArgumentsAsList[0]} has been requested by {e.Command.ChatMessage.Username}" + Environment.NewLine);
                     }
                     var request = (HttpWebRequest)WebRequest.Create("https://www.streamlabs.com/api/v1.0/alerts");
-                    var postData = "access_token=yfEYh5DJo9mlmVmh4tcDVn5eJY66pNKWlrQDC7ZZ";
+                    var postData = "access_token=token";
                     postData += "&type=follow";
                     postData += $"&message=*{e.Command.ChatMessage.Username}* has just requested a song!";
-                    postData += "&image_href=https://apis.eleuna.me/bot/musicreq.gif";
-                    postData += "&sound_href=https://apis.eleuna.me/bot/boop.wav";
+                    postData += "&image_href=imagetodisplay";
+                    postData += "&sound_href=soundtoplay";
                     postData += "&duration=3000";
                     postData += "&special_text_color='#77dd77'";
 
